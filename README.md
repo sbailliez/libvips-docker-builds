@@ -58,3 +58,16 @@ docker run -it --platform linux/amd64 --rm -v $(pwd -P):/tmp libvips-al2023
 
 ## Testing
 
+
+
+## ARM64 
+
+At this moment this does not compile on arm64 due to architecture issue on libx265
+This will be worked on time permitting but priority is x86 at this time.
+
+Possible multiplaform build in the future:
+
+```
+docker buildx create --use --name multiplatform
+docker buildx build --platform linux/amd64,linux/arm64 -t libvips-al2023 -f Dockerfile .
+```
